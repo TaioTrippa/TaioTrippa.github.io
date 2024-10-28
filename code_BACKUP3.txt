@@ -1,0 +1,2026 @@
+########################## HTML #####################
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechTalks Unplugged</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="Podcast Logo"> <!-- Replace with your logo -->
+            <span class="podcast-name">TechTalks Unplugged</span> <!-- Podcast name -->
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#episodes">Episodes</a></li>
+            <li><a href="#video-content">Video Content</a></li>
+            <li><a href="#games-quizzes">Games and Quizzes</a></li>
+            <li><a href="#community">Community</a></li>
+            <li class="dropdown">
+                <a href="#">More</a>
+                <div class="dropdown-content">
+                    <a href="#about">About Us</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </li>
+        </ul>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div> <!-- Mobile Menu Icon -->
+    </nav>
+
+
+    <!-- Main Content -->
+
+    <!-- Home Section -->
+    <section id="home" class="home-section">
+        <!-- Background Video -->
+        <video autoplay muted loop id="background-video">
+            <source src="chosen.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    
+        <!-- Frosted Glass Effect on Content -->
+        <div class="glass-content">
+            <h1 class="home-title typing-effect">Welcome to TechTalks Unplugged!</h1>
+            <p class="home-description">Your go-to podcast for fun and learning.</p>
+            <a href="#episodes" class="cta-button pulse">Listen Now!</a> <!-- Enhanced CTA button -->
+    
+            <!-- Fun Facts Section -->
+            <div class="fun-facts animated-facts">
+                <h3>Fun Facts:</h3>
+                <ul>
+                    <li><span class="fun-fact">🖥️ Did you know that the first computer programmer was a woman named Ada Lovelace?</span></li>
+                    <li><span class="fun-fact">👾 Over 80% of kids say they want to learn coding!</span></li>
+                    <li><span class="fun-fact">🎮 The first video game was created in 1958!</span></li>
+                    <li><span class="fun-fact">🌍 There are over 2 billion gamers worldwide!</span></li>
+                    <li><span class="fun-fact">🤖 A computer can perform trillions of calculations per second!</span></li>
+                    <li><span class="fun-fact">📱 The first mobile phone call was made in 1973!</span></li>
+                    <li><span class="fun-fact">🛰️ The Internet was originally a military project!</span></li>
+                </ul>
+            </div>
+        </div>
+    
+        <!-- Bottom Section -->
+        <div class="bottom-section">
+            <div class="featured-episodes">
+                <h2>Featured Episodes</h2>
+                <div class="episode-card">
+                    <img src="episode-thumbnail.jpg" alt="Episode Title">
+                    <h3>Episode Title</h3>
+                    <p>Short description of the episode.</p>
+                    <a href="link-to-episode" class="cta-button">Listen Now</a>
+                </div>
+                <!-- Repeat episode-card for other episodes -->
+            </div>
+            
+            <div class="newsletter-signup">
+                <h2>Stay Updated!</h2>
+                <form>
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="cta-button">Subscribe</button>
+                </form>
+            </div>
+            
+            <div class="testimonials">
+                <h2>What Our Listeners Say</h2>
+                <blockquote>"This podcast has changed my perspective!" - Listener Name</blockquote>
+                <blockquote>"I love the insights and discussions!" - Listener Name</blockquote>
+            </div>
+        </div>
+    
+        <!-- Floating Action Button -->
+        <a href="#latest" class="floating-button">🎧</a>
+    </section>
+    
+    <br>
+    <hr>
+    <!--EPISODES SECTION-->
+    
+    <section id="episodes" class="section">
+        <div class="overlay"></div> <!-- Overlay for background -->
+        
+        <h2>Episodes</h2>
+        
+        <div class="episode-cards-container">
+            <div class="episode-card" onclick="playEpisode('episode1.mp3')">
+                <img src="episode-thumbnail1.jpg" alt="Episode 1">
+                <h3>Episode Title 1</h3>
+                <p>Short description of the episode.</p>
+                <span class="release-date">Release Date: January 1, 2024</span>
+                <div class="rating" data-rating="4">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
+                </div>
+            </div>
+            
+    
+            <div class="episode-card" data-audio="episode2.mp3">
+                <img src="episode-thumbnail2.jpg" alt="Episode 2" loading="lazy">
+                <h3>Episode Title 2</h3>
+                <p>Short description of the episode.</p>
+                <span class="release-date">Release Date: February 1, 2024</span>
+                <div class="rating">
+                    ★★★☆☆
+                </div>
+            </div>
+    
+            <div class="episode-card" data-audio="episode3.mp3">
+                <img src="episode-thumbnail3.jpg" alt="Episode 3" loading="lazy">
+                <h3>Episode Title 3</h3>
+                <p>Short description of the episode.</p>
+                <span class="release-date">Release Date: March 1, 2024</span>
+                <div class="rating">
+                    ★★★★★
+                </div>
+            </div>
+    
+            <!-- Add more episode cards as needed -->
+        </div>
+    
+        <div class="audio-player">
+            <audio id="audio" controls>
+                <source id="audio-source" src="" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    
+        <!-- Dark Mode Toggle -->
+        <div class="theme-toggle">
+            <input type="checkbox" id="dark-mode-toggle">
+            <label for="dark-mode-toggle">Dark Mode</label>
+        </div>
+    </section>
+    
+    
+
+    <br>
+    <hr>
+
+    <!--VIDE0 SECTION-->
+    <section id="video-content" class="section video-section">
+        <div class="video-overlay"></div> <!-- Overlay for visual effect -->
+    
+        <h2>Featured Videos</h2>
+    
+        <div class="video-grid-container">
+            <!-- First row of video cards -->
+            <div class="video-card" data-tilt>
+                <div class="video-overlay-content">
+                    <div class="play-button"></div>
+                </div>
+                <video muted loop poster="video-thumbnail1.jpg" class="video-player hover-preview">
+                    <source src="video1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <h3>Video Title 1</h3>
+                <p>Brief description of video 1. Explore the latest in tech innovations.</p>
+            </div>
+    
+            <div class="video-card" data-tilt>
+                <div class="video-overlay-content">
+                    <div class="play-button"></div>
+                </div>
+                <video muted loop poster="video-thumbnail2.jpg" class="video-player hover-preview">
+                    <source src="video2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <h3>Video Title 2</h3>
+                <p>Brief description of video 2. Delve into AI breakthroughs.</p>
+            </div>
+    
+            <div class="video-card" data-tilt>
+                <div class="video-overlay-content">
+                    <div class="play-button"></div>
+                </div>
+                <video muted loop poster="video-thumbnail3.jpg" class="video-player hover-preview">
+                    <source src="video3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <h3>Video Title 3</h3>
+                <p>Brief description of video 3. Discover the future of smart tech.</p>
+            </div>
+    
+            <!-- Second row of video cards -->
+            <div class="video-card" data-tilt>
+                <div class="video-overlay-content">
+                    <div class="play-button"></div>
+                </div>
+                <video muted loop poster="video-thumbnail4.jpg" class="video-player hover-preview">
+                    <source src="video4.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <h3>Video Title 4</h3>
+                <p>Brief description of video 4. Step into the world of robotics.</p>
+            </div>
+    
+            <div class="video-card" data-tilt>
+                <div class="video-overlay-content">
+                    <div class="play-button"></div>
+                </div>
+                <video muted loop poster="video-thumbnail5.jpg" class="video-player hover-preview">
+                    <source src="video5.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <h3>Video Title 5</h3>
+                <p>Brief description of video 5. Understanding quantum computing.</p>
+            </div>
+    
+            <div class="video-card" data-tilt>
+                <div class="video-overlay-content">
+                    <div class="play-button"></div>
+                </div>
+                <video muted loop poster="video-thumbnail6.jpg" class="video-player hover-preview">
+                    <source src="video6.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <h3>Video Title 6</h3>
+                <p>Brief description of video 6. The rise of autonomous vehicles.</p>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+    
+
+    <br>
+    <hr>
+
+    <!--GAMES AND QUIZZES SECTION-->
+    <section id="games-quizzes" class="games-quizzes-section">
+        <video autoplay muted loop class="background-video">
+          <source src="chosen.mp4" type="video/mp4"> <!-- Update with your video source -->
+          Your browser does not support the video tag.
+        </video>
+        <div class="particles-container"></div> <!-- Container for particles -->
+        <div class="content-container">
+          <h2 class="neon-text">Games & Quizzes</h2>
+          <div class="game-content">
+            <div class="game-cards">
+              <div class="game-card" onclick="playGame('Math Quiz')">
+                <h3>Math Quiz</h3>
+                <p>Test your math skills!</p>
+              </div>
+              <div class="game-card" onclick="playGame('Coding Challenge')">
+                <h3>Coding Challenge</h3>
+                <p>Show off your coding abilities!</p>
+              </div>
+              <div class="game-card" onclick="playGame('Science Trivia')">
+                <h3>Science Trivia</h3>
+                <p>How much do you know about science?</p>
+              </div>
+              <div class="game-card" onclick="playGame('History Quiz')">
+                <h3>History Quiz</h3>
+                <p>Test your knowledge of history!</p>
+              </div>
+              <div class="game-card" onclick="playGame('Geography Challenge')">
+                <h3>Geography Challenge</h3>
+                <p>How well do you know the world?</p>
+              </div>
+              <div class="game-card" onclick="playGame('Art Quiz')">
+                <h3>Art Quiz</h3>
+                <p>Discover the world of art!</p>
+              </div>
+              <div class="game-card" onclick="playGame('Logic Puzzle')">
+                <h3>Logic Puzzle</h3>
+                <p>Can you solve the puzzle?</p>
+              </div>
+              <div class="game-card" onclick="playGame('Coding Quiz')">
+                <h3>Coding Quiz</h3>
+                <p>Test your coding knowledge!</p>
+              </div>
+              <div class="game-card" onclick="playGame('English Quiz')">
+                <h3>English Quiz</h3>
+                <p>Improve your English skills!</p>
+              </div>
+              <div class="game-card" onclick="playGame('Math Challenge')">
+                <h3>Math Challenge</h3>
+                <p>Are you ready for a math challenge?</p>
+              </div>
+            </div>
+            <div id="leaderboard-section" class="leaderboard-card">
+              <h3>Leaderboard</h3>
+              <ul id="leaderboard-list"></ul>
+            </div>
+          </div>
+        </div>
+    </section>    
+    
+    
+    
+    
+
+    <br>
+    <hr>
+
+    <!--COMMUNITY SECTION-->
+    <section id="community" class="community-section">
+        <video autoplay muted loop id="community-bg-video">
+            <source src="chosen.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="animated-gradient-overlay"></div>
+        <div class="particle-overlay"></div>
+    
+        <!-- Community Content -->
+        <div class="community-content">
+            <div class="community-left">
+                <h2 class="section-heading">Join Our Community</h2>
+                <p>Become part of a thriving network of tech enthusiasts! Share, learn, and grow together with others who share your passion for technology and innovation.</p>
+                <button class="join-btn" onclick="triggerConfetti()">Join Now</button>
+                <div class="social-icons">
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-linkedin"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-discord"></i>
+                </div>
+                <div class="user-stats">
+                    <div class="stat">
+                        <h3 class="stat-number" id="members-count">0</h3>
+                        <p>Members</p>
+                    </div>
+                    <div class="stat">
+                        <h3 class="stat-number" id="chats-count">0</h3>
+                        <p>Live Discussions</p>
+                    </div>
+                    <div class="stat">
+                        <h3 class="stat-number" id="events-count">0</h3>
+                        <p>Upcoming Events</p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Leaderboard -->
+            <div class="leaderboard">
+                <h3>Leaderboard</h3>
+                <ul>
+                    <li class="top-contributor"><img src="avatar1.png" alt="User Avatar" class="avatar"> Alex Johnson <span class="badge">Top Contributor</span></li>
+                    <li class="top-contributor"><img src="avatar2.png" alt="User Avatar" class="avatar"> Emily Chen <span class="badge">Top Contributor</span></li>
+                    <li class="top-contributor"><img src="avatar3.png" alt="User Avatar" class="avatar"> David Lee <span class="badge">Top Contributor</span></li>
+                </ul>
+            </div>
+    
+            <!-- Live Chat Card -->
+            <div class="community-right">
+                <div class="live-chat floating-card">
+                    <h3>Live Chat Feed</h3>
+                    <ul id="chat-feed"></ul>
+                    <div class="custom-emojis">
+                        <span>😊</span><span>🚀</span><span>💡</span><span>👍</span><span>🎉</span>
+                    </div>
+                    <p id="typing-indicator">Someone is typing...</p>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Testimonials Section -->
+        <div class="community-testimonials floating-card">
+            <h3 class="testimonial-heading">What Our Members Say</h3>
+            <div class="testimonial-slider">
+                <div class="testimonial active">
+                    <img src="avatar1.png" alt="User Avatar" class="avatar">
+                    <p class="testimonial-content">"Being a part of this community has been an incredible experience!"</p>
+                    <span class="testimonial-name">- Alex Johnson</span>
+                </div>
+                <div class="testimonial">
+                    <img src="avatar2.png" alt="User Avatar" class="avatar">
+                    <p class="testimonial-content">"I’ve learned so much from others and made amazing connections."</p>
+                    <span class="testimonial-name">- Emily Chen</span>
+                </div>
+                <div class="testimonial">
+                    <img src="avatar3.png" alt="User Avatar" class="avatar">
+                    <p class="testimonial-content">"A supportive and knowledgeable community – highly recommended!"</p>
+                    <span class="testimonial-name">- David Lee</span>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Event Timeline -->
+        <div class="event-timeline">
+            <h3>Upcoming Events</h3>
+            <div class="timeline">
+                <div class="event">
+                    <span class="event-date">Oct 31, 2024</span>
+                    <p>Tech Q&A Session <span class="countdown" data-date="2024-10-31"></span></p>
+                </div>
+                <div class="event">
+                    <span class="event-date">Nov 15, 2024</span>
+                    <p>Web Development Workshop <span class="countdown" data-date="2024-11-15"></span></p>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Personalized Greeting -->
+        <div class="personal-greeting">Welcome back, <span id="username">[Username]</span>!</div>
+    </section>
+    
+    
+    
+    <br>
+    <hr>
+    <!--Footer Section-->>
+
+    <footer class="footer">
+    <div class="footer-content">
+        <!-- Neon Gradient Border Animation -->
+        <div class="neon-border">
+            <h2>Stay Connected</h2>
+            <p>Follow us on our social media channels and keep up with the latest updates!</p>
+        </div>
+
+        <!-- Links with Glitch Hover Effect -->
+        <div class="footer-links">
+            <a href="#about" class="glitch-link">About Us</a>
+            <a href="#services" class="glitch-link">Services</a>
+            <a href="#contact" class="glitch-link">Contact</a>
+        </div>
+
+        <!-- Social Media Icons -->
+        <div class="social-icons">
+            <a href="https://twitter.com" target="_blank" class="social-icon twitter"></a>
+            <a href="https://facebook.com" target="_blank" class="social-icon facebook"></a>
+            <a href="https://instagram.com" target="_blank" class="social-icon instagram"></a>
+            <a href="https://linkedin.com" target="_blank" class="social-icon linkedin"></a>
+        </div>
+
+        <!-- Rotating 3D Logo Cube -->
+        <div class="rotating-cube">
+            <div class="cube-face cube-face1">Logo1</div>
+            <div class="cube-face cube-face2">Logo2</div>
+            <div class="cube-face cube-face3">Logo3</div>
+            <div class="cube-face cube-face4">Logo4</div>
+        </div>
+
+        <!-- Animated Typing Text -->
+        <div class="typing-text">
+            <p>Coded and developed by Joe Munene! </p>
+        </div>
+
+        <!-- Toggle Light/Dark Mode -->
+        <button class="toggle-mode">Toggle Light/Dark Mode</button>
+    </div>
+</footer>
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+################### CSS #####################
+/* Basic Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: black; /* Default text color */
+}
+
+/* General Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #1a1a2e, #0f3460); /* Gradient background */
+    position: sticky; /* Sticky navbar */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 2px solid #00ffcc; /* Classy bottom border */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    overflow-x: hidden; /* Prevents content from overflowing */
+    transition: background 0.3s ease; /* Smooth background transition */
+}
+
+/* Logo and Podcast Name */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px; /* Adjust logo size */
+    margin-right: 10px;
+}
+
+.podcast-name {
+    font-size: 28px;
+    font-family: 'Pacifico', cursive; /* Cursive font */
+    color: #00ffcc;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li {
+    position: relative; /* For dropdown positioning */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 5px 0;
+    transition: color 0.3s, transform 0.3s;
+    position: relative;
+}
+
+/* Glow effect on hover */
+.nav-links a:hover {
+    color: #00ffcc;
+    transform: scale(1.1); /* Hover grow effect */
+    text-shadow: 0 0 8px #00ffcc, 0 0 16px #00ffcc; /* Neon-like glow effect */
+}
+
+/* Active Link Styles */
+.nav-links a.active {
+    border-bottom: 2px solid #00ffcc;
+}
+
+/* Dropdown Menu */
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute;
+    background-color: #1a1a2e;
+    min-width: 160px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Show dropdown on hover */
+}
+
+.dropdown-content a {
+    color: #ffffff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #00ffcc;
+}
+
+/* Mobile Menu Icon */
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: linear-gradient(90deg, #1a1a2e, #0f3460);
+        position: absolute;
+        top: 60px; /* Adjust to fit below navbar */
+        left: 0;
+        padding: 10px 0;
+        overflow-x: hidden; /* Ensure it stays within viewport on mobile */
+    }
+
+    .nav-links li {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block; /* Show menu icon on mobile */
+    }
+}
+
+
+/* Section Styles */
+.section {
+    padding: 100px 20px; /* Space for the fixed navbar */
+    height: 100vh; /* Full viewport height for each section */
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the background image */
+    color: #ffffff; /* Text color for section headings */
+    text-align: center; /* Center-align text */
+}
+
+.section h2 {
+    font-size: 48px; /* Increased font size for headings */
+    margin-bottom: 20px; /* Space below heading */
+    color: #00ffcc; /* Heading color */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Shadow effect */
+}
+
+/* Home Section Specific Styles */
+.home-section {
+    position: relative; /* Position for background video */
+    overflow: hidden; /* Hide overflow for clean look */
+}
+
+#background-video {
+    position: absolute; /* Absolute positioning */
+    top: 0; /* Align to top */
+    left: 0; /* Align to left */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    object-fit: cover; /* Cover the area */
+    z-index: -1; /* Send to background */
+}
+
+.glass-content {
+    position: relative; /* Position for glass effect */
+    background: rgba(255, 255, 255, 0.1); /* Transparent white background */
+    border-radius: 10px; /* Rounded corners */
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+    padding: 30px; /* Padding for content */
+    max-width: 800px; /* Maximum width */
+    margin: 0 auto; /* Center content */
+    text-align: center; /* Center text */
+    z-index: 1; /* Ensure it appears above background */
+}
+
+.home-title {
+    font-size: 56px; /* Title font size */
+    margin-bottom: 10px; /* Space below title */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Shadow effect for title */
+}
+
+.home-description {
+    font-size: 20px; /* Description font size */
+    margin-bottom: 20px; /* Space below description */
+}
+
+.cta-button {
+    background-color: #00ffcc; /* Button background */
+    color: #000; /* Button text color */
+    padding: 10px 20px; /* Button padding */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* No underline */
+    transition: background-color 0.3s; /* Smooth background transition */
+}
+
+.cta-button:hover {
+    background-color: #009999; /* Darker shade on hover */
+}
+
+/* Fun Facts Section */
+.fun-facts {
+    margin-top: 20px; /* Space above fun facts */
+}
+
+.fun-facts ul {
+    list-style-type: none; /* Remove default list style */
+    padding: 0; /* Remove padding */
+}
+
+.fun-fact {
+    display: block; /* Block display for each fun fact */
+    margin: 5px 0; /* Space between fun facts */
+    font-size: 16px; /* Font size for fun facts */
+}
+
+/* Bottom Section Styles */
+.bottom-section {
+    display: flex; /* Flex container */
+    justify-content: space-between; /* Space between items */
+    padding: 20px 0; /* Vertical padding */
+}
+
+.featured-episodes, .newsletter-signup, .testimonials {
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+    padding: 20px; /* Padding for cards */
+    border-radius: 10px; /* Rounded corners */
+    flex: 1; /* Equal flex growth */
+    margin: 10px; /* Space around cards */
+    text-align: left; /* Align text to the left */
+}
+
+/* Floating Action Button */
+.floating-button {
+    position: fixed; /* Fixed position */
+    bottom: 20px; /* Space from bottom */
+    right: 20px; /* Space from right */
+    background-color: #00ffcc; /* Background color */
+    color: #000; /* Text color */
+    border-radius: 50%; /* Circular button */
+    padding: 15px; /* Padding for button */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    font-size: 24px; /* Font size for icon */
+    transition: background-color 0.3s; /* Smooth background transition */
+}
+
+.floating-button:hover {
+    background-color: #009999; /* Darker shade on hover */
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack navbar items */
+        align-items: flex-start; /* Align items to start */
+    }
+    
+    .nav-links {
+        display: none; /* Hide links on mobile */
+        flex-direction: column; /* Stack links vertically */
+        position: absolute; /* Position for dropdown effect */
+        top: 60px; /* Position below navbar */
+        left: 0; /* Align to left */
+        width: 100%; /* Full width */
+        background: #0f3460; /* Background color */
+    }
+
+    .nav-links.show {
+        display: flex; /* Show links when toggled */
+    }
+
+    .menu-icon {
+        display: block; /* Show mobile icon */
+    }
+
+    .bottom-section {
+        flex-direction: column; /* Stack sections on mobile */
+        align-items: center; /* Center align */
+    }
+}
+
+/* General Styles */
+/* Episode Section */
+.section {
+    padding: 100px 20px; /* Space for the fixed navbar */
+    background-image: url('caves.jpg'); /* Background image */
+    background-size: cover; /* Cover the section with the background image */
+    background-position: center; /* Center the background image */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative; /* For positioning elements */
+    color: white; /* Text color for better contrast */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay effect */
+    z-index: -1; /* Behind the content */
+}
+
+h2 {
+    color: #00ffcc; /* Neon color for title */
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8); /* Glow effect */
+    margin-bottom: 20px; /* Space below title */
+}
+
+.episode-cards-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap */
+    justify-content: center; /* Center cards */
+    gap: 20px; /* Space between cards */
+}
+
+.episode-card {
+    background: rgba(255, 255, 255, 0.3); /* White background with transparency */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Inner padding */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    width: 250px; /* Fixed width for cards */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
+    position: relative; /* Position for z-index stacking */
+    cursor: pointer; /* Pointer cursor */
+    opacity: 0; /* For scroll animation */
+    transform: translateY(50px); /* Initial off-screen position */
+}
+
+.episode-card.show {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.episode-card img {
+    max-width: 100%; /* Ensure image is responsive */
+    border-radius: 10px; /* Rounded corners for episode image */
+    height: 150px; /* Fixed height for image */
+    object-fit: cover; /* Ensure the image covers the area */
+}
+
+.episode-card:hover {
+    transform: scale(1.05); /* Slight grow effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+}
+
+.release-date {
+    display: block; /* Block display for release date */
+    margin: 10px 0; /* Margin for spacing */
+}
+
+.rating {
+    color: #ffcc00; /* Gold color for stars */
+}
+
+.audio-player {
+    margin-top: 20px; /* Space above audio player */
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+body.dark-mode .section {
+    background-color: #1f1f1f;
+    background-image: none; /* Remove background image for dark mode */
+}
+
+body.dark-mode h2 {
+    color: #00ffcc;
+}
+
+/* Dark Mode Toggle */
+.theme-toggle {
+    margin-top: 30px;
+}
+
+.theme-toggle input[type="checkbox"] {
+    width: 40px;
+    height: 20px;
+    position: relative;
+    appearance: none;
+    background-color: #ccc;
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+}
+
+.theme-toggle input[type="checkbox"]:checked {
+    background-color: #00ffcc;
+}
+
+.theme-toggle input[type="checkbox"]::before {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background-color: white;
+    border-radius: 50%;
+    top: 1px;
+    left: 1px;
+    transition: 0.2s;
+}
+
+.theme-toggle input[type="checkbox"]:checked::before {
+    transform: translateX(20px);
+}
+
+/* Hover Sound */
+body {
+    cursor: url('custom-cursor.png'), auto; /* Custom cursor */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .episode-cards-container {
+        flex-direction: column; /* Stack cards on smaller screens */
+        align-items: center; /* Center cards */
+    }
+}
+
+/* Rating styles */
+.rating {
+    display: inline-block;
+    position: relative;
+    unicode-bidi: bidi-override;
+    font-size: 24px;
+    color: #c5c5c5; /* Default grey stars */
+}
+
+.rating span {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    color: #ffcc00; /* Gold color for filled stars */
+    transition: color 0.3s ease; /* Smooth transition for the star color */
+}
+
+.rating span:hover ~ span {
+    color: #c5c5c5; /* Reset subsequent stars on hover */
+}
+
+.rating span:hover,
+.rating span:hover ~ span {
+    color: #ffcc00; /* Fill stars on hover */
+}
+
+/* Video Section */
+.video-section {
+    padding: 100px 20px;
+    position: relative;
+    background-image: url('video.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.video-section h2 {
+    font-size: 3rem;
+    color: #00ffcc;
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+    margin-bottom: 40px;
+    z-index: 2;
+}
+
+/* Grid for video cards */
+.video-grid-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    z-index: 2;
+    flex-wrap: wrap;
+}
+
+.video-card {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    max-width: 350px;
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden; /* Hide play button overflow */
+}
+
+.video-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* 3D Tilt Effect */
+[data-tilt] {
+    perspective: 1000px;
+}
+
+[data-tilt] .video-card {
+    transform-style: preserve-3d;
+    transition: transform 0.2s ease-out;
+}
+
+.video-card:hover {
+    transform: rotateY(5deg) rotateX(5deg);
+}
+
+/* Play Button Overlay */
+.video-overlay-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-card:hover .video-overlay-content {
+    opacity: 1;
+}
+
+.play-button {
+    width: 60px;
+    height: 60px;
+    border: 2px solid #00ffcc;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.play-button::after {
+    content: '';
+    position: absolute;
+    top: 18px;
+    left: 22px;
+    width: 0;
+    height: 0;
+    border-left: 15px solid #00ffcc;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+/* Video Player */
+.video-player {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.video-card h3 {
+    margin: 20px 0 10px;
+    color: #00ffcc;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.8);
+}
+
+.video-card p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .video-grid-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+/* Parallax background effect */
+.video-section {
+    background-attachment: fixed;
+    background-image: url('video.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Hover Preview Effect */
+.video-player {
+    transition: opacity 0.3s ease;
+}
+
+.hover-preview:hover {
+    opacity: 0.7; /* Slight transparency on hover */
+}
+
+.hover-preview:hover video {
+    play:(); /* Play the muted preview */
+}
+
+/* Neon Glow Pulsing */
+.video-card:hover {
+    animation: glow-pulse 1.5s infinite;
+}
+
+@keyframes glow-pulse {
+    0% {
+        box-shadow: 0 8px 20px rgba(0, 255, 255, 0.5);
+    }
+    50% {
+        box-shadow: 0 8px 30px rgba(0, 255, 255, 1);
+    }
+    100% {
+        box-shadow: 0 8px 20px rgba(0, 255, 255, 0.5);
+    }
+}
+
+/* Scroll-triggered animation */
+.video-card {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.video-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #00ffcc;
+    border-radius: 10px;
+}
+
+/* Progress Bar on Hover */
+.video-card:hover .progress-bar {
+    width: 100%;
+}
+
+.progress-bar {
+    width: 0;
+    height: 4px;
+    background-color: #00ffcc;
+    transition: width 3s linear;
+}
+
+/* Games and Quizzes Section Styles */
+.games-quizzes-section {
+    position: relative;
+    padding: 100px 20px;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire section */
+    z-index: 1; /* Keep the video behind the content */
+  }
+  
+  .particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2; /* Ensure particles are on top of the video but behind the content */
+    pointer-events: none; /* So particles don't interfere with clicks */
+  }
+  
+  .content-container {
+    position: relative;
+    z-index: 3; /* Keep the content above the particles */
+  }
+  
+  .neon-text {
+    font-size: 3em;
+    color: #fff;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff;
+    animation: neon-pulse 1.5s infinite alternate;
+  }
+  
+  @keyframes neon-pulse {
+    0% {
+      text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+    }
+    100% {
+      text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff;
+    }
+  }
+  
+  .game-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+  }
+  
+  .game-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    width: 70%; /* Adjust width for game cards */
+  }
+  
+  .game-card {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer; /* Change cursor to pointer on hover */
+  }
+  
+  .game-card:hover {
+    transform: scale(1.1);
+  }
+  
+  .leaderboard-card {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px; /* Slim card width */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .leaderboard-card h3 {
+    margin-bottom: 10px;
+  }
+  
+  #leaderboard-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .particle {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    opacity: 0;
+    animation: float 5s infinite ease-in-out;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0) scale(0.5);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100px) scale(1);
+      opacity: 0;
+    }
+  }
+  
+  .doodle {
+    position: absolute;
+    z-index: 2;
+    background: url('doodle1.png'); /* Replace with an actual doodle image */
+    width: 100px;
+    height: 100px;
+    animation: doodle-animation 6s infinite alternate;
+  }
+  
+  @keyframes doodle-animation {
+    0% {
+      transform: rotate(0deg) translateX(0);
+    }
+    100% {
+      transform: rotate(360deg) translateX(50px);
+    }
+  }
+
+/* Community Section */
+.community-section {
+    position: relative;
+    padding: 4rem;
+    color: #fff;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#community-bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 1.0;
+}
+
+.animated-gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(120deg, rgba(0, 0, 0, 0.2), rgba(0, 128, 128, 0.2), rgba(255, 69, 0, 0.2));
+    background-size: 200% 200%;
+    animation: gradientShift 15s infinite;
+    opacity: 0.5;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.particle-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    background-image: url('particles.png');
+    animation: moveParticles 20s linear infinite;
+    opacity: 0.2;
+}
+
+@keyframes moveParticles {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10%); }
+}
+
+.community-content {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 1200px;
+    padding: 2rem;
+    gap: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.community-left {
+    width: 50%;
+}
+
+.section-heading {
+    font-size: 2.5rem;
+    color: #a0f8f8;
+    text-shadow: 0px 0px 10px rgba(160, 248, 248, 0.8);
+    margin-bottom: 1rem;
+}
+
+.join-btn {
+    background-color: #4caf50;
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px #4caf50;
+    transition: transform 0.3s ease;
+    animation: glowPulse 3s infinite;
+}
+
+.join-btn:hover {
+    transform: scale(1.05);
+}
+
+@keyframes glowPulse {
+    0%, 100% { box-shadow: 0px 0px 10px #4caf50; }
+    50% { box-shadow: 0px 0px 20px #4caf50; }
+}
+
+.community-right {
+    width: 50%;
+}
+
+.live-chat {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 1rem;
+    overflow-y: auto;
+    height: 250px;
+    box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.5);
+}
+
+#chat-feed {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.live-chat ul li {
+    display: flex;
+    align-items: center;
+}
+
+.live-chat ul li::before {
+    content: '💬';
+    margin-right: 0.5rem;
+    font-size: 1rem;
+}
+
+#typing-indicator {
+    font-size: 0.9rem;
+    color: #ddd;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.user-stats {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2rem;
+    color: #00ffd5;
+}
+
+/* Community Section */
+.community-testimonials {
+    margin-top: 3rem;
+    width: 60%;
+    max-width: 700px;
+    background-color: rgba(20, 20, 20, 0.8);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.3);
+    overflow: hidden; /* Prevents overflow */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.testimonial-heading {
+    font-size: 1.8rem;
+    color: #00ffd5;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.testimonial-slider {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.testimonial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    text-align: center;
+    width: 100%;
+}
+
+.testimonial.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.avatar {
+    width: 60px; /* Reduced size */
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.testimonial-content {
+    font-style: italic;
+    font-size: 1rem;
+    color: #f0f0f0;
+    margin-bottom: 0.5rem;
+}
+
+.testimonial-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #00ffd5;
+    margin-top: 0.5rem;
+}
+
+@keyframes slide {
+    0%, 33.33% { transform: translateX(0%); }
+    66.66%, 100% { transform: translateX(-100%); }
+}
+
+
+.social-icons {
+    margin-top: 1rem;
+}
+
+.social-icons i {
+    font-size: 1.5rem;
+    color: #00ffd5;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons i:hover {
+    color: #fff;
+    transform: scale(1.1);
+    text-shadow: 0px 0px 10px #00ffd5;
+}
+
+/* Additional CSS for new features */
+.personal-greeting {
+    font-size: 1.4rem;
+    color: #00ffd5;
+    text-align: center;
+    margin-top: 1rem;
+    animation: fadeIn 1.5s ease;
+}
+
+.top-contributor {
+    color: #ffd700;
+    font-weight: bold;
+    animation: pulseGlow 2s infinite alternate;
+}
+
+.badge {
+    background-color: #ff5733;
+    color: #fff;
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.custom-emojis span {
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin: 0.2rem;
+    transition: transform 0.2s;
+}
+
+.custom-emojis span:hover {
+    transform: scale(1.2);
+}
+
+.animated-statistics {
+    height: 200px;
+    width: 100%;
+    display: block;
+    margin: auto;
+    overflow: hidden;
+}
+
+.avatar:hover {
+    transform: perspective(500px) rotateY(15deg) scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 10px #ffd700; }
+    100% { box-shadow: 0 0 20px #ffd700; }
+}
+
+/* Event timeline styles */
+.event-timeline {
+    margin-top: 2rem;
+    background-color: rgba(20, 20, 20, 0.8);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.timeline .event {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    color: #a0f8f8;
+}
+
+.timeline .event .countdown {
+    font-weight: bold;
+    color: #00ffd5;
+}
+
+
+/*Footer Section*/
+
+ /* Base Footer Styling */
+.footer {
+    position: relative;
+    padding: 30px;
+    color: #fff;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.85);
+    border-top: 2px solid transparent;
+    border-image: linear-gradient(90deg, #ff7b00, #bfff00, #00ffea) 1;
+    overflow: hidden;
+}
+
+/* Neon Gradient Border Animation */
+.neon-border {
+    padding: 10px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    background: linear-gradient(to right, #000, #000), linear-gradient(90deg, #ff7b00, #bfff00, #00ffea);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    animation: neon-border-glow 4s infinite;
+}
+
+@keyframes neon-border-glow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* Glitch Animation for Links */
+.glitch-link {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    margin: 0 10px;
+}
+
+.glitch-link:hover::after {
+    content: attr(href);
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    color: rgba(255, 0, 0, 0.8);
+    animation: glitch 0.3s steps(2) infinite;
+}
+
+
+
+@keyframes glitch {
+    0% { transform: translate(2px, -2px); }
+    100% { transform: translate(-2px, 2px); }
+}
+
+/* Rotating 3D Logo Cube */
+.rotating-cube {
+    perspective: 1000px;
+    width: 50px;
+    height: 50px;
+    margin: 20px auto;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(30deg) rotateY(30deg);
+    animation: cube-rotate 6s infinite linear;
+}
+
+.cube-face {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes cube-rotate {
+    from { transform: rotateY(0); }
+    to { transform: rotateY(360deg); }
+}
+
+/* Social Media Icons with Glowing Effect */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+    margin: 0 8px;
+    background-size: cover;
+    transition: transform 0.3s;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+.twitter {
+    background-image: url('x.png');
+}
+
+.facebook {
+    background-image: url('fb.png');
+}
+
+.instagram {
+    background-image: url('insta.png');
+}
+
+.linkedin {
+    background-image: url('LI.png');
+}
+
+@keyframes neon-border-glow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* Background Grid Lines */
+.footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                      linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: grid-move 5s linear infinite;
+}
+
+@keyframes grid-move {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-40px, -40px); }
+}
+
+/* Animated Typing Effect */
+.typing-text p {
+    display: inline-block;
+    font-size: 1.2em;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 4s steps(30) infinite;
+    border-right: 2px solid #fff;
+}
+
+@keyframes typing {
+    0%, 100% { width: 0; }
+    50% { width: 100%; }
+}
+
+/* Toggle Light/Dark Mode Button */
+.toggle-mode {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    background: #333;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+}
+
+body.light-mode .footer {
+    background: #fff;
+    color: #000;
+}
+
+
+########################### JS ################### 
+// JavaScript to handle the fun facts typing effect
+document.addEventListener("DOMContentLoaded", () => {
+    const facts = document.querySelectorAll('.fun-fact');
+    facts.forEach((fact, index) => {
+        fact.style.animationDelay = `${index * 4}s`; // Stagger each fact's appearance (increase delay for visibility)
+        fact.classList.add('typing'); // Add the typing class for animation
+    });
+});
+
+// Function to play an episode
+function playEpisode(source) {
+    const audio = document.getElementById('audio');
+    const audioSource = document.getElementById('audio-source');
+    audioSource.src = source;
+    audio.load();
+    audio.play();
+}
+
+// Event listener to play the episode when clicking on the episode card
+document.querySelectorAll('.episode-card').forEach(card => {
+    card.addEventListener('click', function () {
+        const audioSrc = this.getAttribute('data-audio');
+        playEpisode(audioSrc);
+    });
+});
+
+// Scroll animation for cards
+window.addEventListener('scroll', function() {
+    const cards = document.querySelectorAll('.episode-card');
+    cards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+            card.classList.add('show');
+        }
+    });
+});
+
+// Dark Mode Toggle
+const toggle = document.getElementById('dark-mode-toggle');
+toggle.addEventListener('change', function() {
+    document.body.classList.toggle('dark-mode');
+});
+
+// Optional: Hover sound effect
+const hoverSound = new Audio('hover-sound.mp3');
+document.querySelectorAll('.episode-card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        hoverSound.play();
+    });
+});
+
+document.addEventListener("scroll", function() {
+    const videoCards = document.querySelectorAll('.video-card');
+    videoCards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom >= 0) {
+            card.classList.add('is-visible');
+        }
+    });
+});
+
+
+// JavaScript for Games and Quizzes Section
+
+// JavaScript to handle particles and doodles
+
+function generateParticles() {
+    const particleContainer = document.querySelector('.particles-container');
+    const totalParticles = 50;
+  
+    for (let i = 0; i < totalParticles; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+      particle.style.width = `${Math.random() * 10 + 5}px`;
+      particle.style.height = particle.style.width;
+      particle.style.top = `${Math.random() * 100}%`;
+      particle.style.left = `${Math.random() * 100}%`;
+      particle.style.animationDelay = `${Math.random() * 5}s`;
+      particleContainer.appendChild(particle);
+    }
+  }
+  
+  function generateDoodles() {
+    const doodleContainer = document.querySelector('.particles-container');
+    const doodle = document.createElement('div');
+    doodle.classList.add('doodle');
+    doodle.style.top = `${Math.random() * 100}%`;
+    doodle.style.left = `${Math.random() * 100}%`;
+    doodleContainer.appendChild(doodle);
+  }
+  
+  document.addEventListener("DOMContentLoaded", () => {
+    generateParticles();
+    generateDoodles();
+  });
+  
+
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+    // Stats counter animation
+    const stats = [
+        { id: "members-count", end: 1800 },
+        { id: "chats-count", end: 320 },
+        { id: "events-count", end: 12 }
+    ];
+
+    stats.forEach(stat => animateCounter(stat.id, stat.end, 2000));
+
+    function animateCounter(id, end, duration) {
+        const el = document.getElementById(id);
+        let start = 0;
+        const step = (end / duration) * 20;
+
+        function updateCounter() {
+            start += step;
+            el.textContent = Math.floor(start);
+            if (start < end) requestAnimationFrame(updateCounter);
+            else el.textContent = end;
+        }
+        requestAnimationFrame(updateCounter);
+    }
+
+    // Typing indicator in the chat
+    const chatFeed = document.getElementById('chat-feed');
+    const typingIndicator = document.getElementById('typing-indicator');
+    const dummyMessages = [
+        "Welcome to the community!",
+        "Just learned some new coding tricks!",
+        "Anyone available for a quick Q&A?",
+        "Check out our latest post on AI trends!",
+        "Who’s attending the tech meetup tomorrow?"
+    ];
+
+    let messageIndex = 0;
+    function addChatMessage() {
+        const newMessage = document.createElement('li');
+        newMessage.textContent = dummyMessages[messageIndex];
+        chatFeed.appendChild(newMessage);
+        messageIndex = (messageIndex + 1) % dummyMessages.length;
+        chatFeed.scrollTop = chatFeed.scrollHeight;
+
+        typingIndicator.style.opacity = '1';
+        setTimeout(() => typingIndicator.style.opacity = '0', 1000);
+    }
+
+    setInterval(addChatMessage, 3000);
+
+    // Testimonial slider rotation
+    const testimonials = document.querySelectorAll('.testimonial');
+    let testimonialIndex = 0;
+
+    function cycleTestimonials() {
+        testimonials.forEach((testimonial, index) => {
+            testimonial.classList.remove('active');
+            if (index === testimonialIndex) testimonial.classList.add('active');
+        });
+        testimonialIndex = (testimonialIndex + 1) % testimonials.length;
+    }
+
+    setInterval(cycleTestimonials, 5000);
+});
+ 
+// JavaScript for smooth carousel effect in testimonials
+document.addEventListener("DOMContentLoaded", () => {
+    const testimonials = document.querySelectorAll(".testimonial");
+    let currentTestimonial = 0;
+
+    function switchTestimonial() {
+        // Hide current testimonial
+        testimonials[currentTestimonial].classList.remove("active");
+
+        // Move to next testimonial, or loop back to start
+        currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+
+        // Show the next testimonial
+        testimonials[currentTestimonial].classList.add("active");
+    }
+
+    // Set interval for smooth switching
+    setInterval(switchTestimonial, 4000); // Switch every 4 seconds
+});
+
+// JavaScript for confetti, countdown, and personalized greeting
+document.addEventListener("DOMContentLoaded", function() {
+    const username = localStorage.getItem("username") || "Guest";
+    document.getElementById("username").textContent = username;
+
+    function triggerConfetti() {
+        // Code for confetti animation (using a library like confetti.js or custom code)
+        console.log("Confetti animation triggered!");
+    }
+
+    // Countdown Timer
+    document.querySelectorAll('.countdown').forEach(item => {
+        const eventDate = new Date(item.dataset.date);
+        setInterval(() => {
+            const now = new Date();
+            const timeLeft = eventDate - now;
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            item.textContent = `${days} days remaining`;
+        }, 1000);
+    });
+});
+
+
+
+// Toggle Light/Dark Mode
+document.querySelector('.toggle-mode').addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+});
+
+// Parallax Effect for Background
+window.addEventListener('scroll', function() {
+    const background = document.querySelector('.footer-background');
+    let scrollPos = window.scrollY;
+    background.style.transform = `translateY(${scrollPos * 0.2}px)`;
+});
+
+document.querySelector('.toggle-mode').addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+});
+
+function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active'); // Toggles the 'active' class
+}
+
+
+
+
+

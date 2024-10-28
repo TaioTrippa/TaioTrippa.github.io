@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechTalks Unplugged</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="Podcast Logo"> <!-- Replace with your logo -->
+            <span class="podcast-name">TechTalks Unplugged</span> <!-- Podcast name -->
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#episodes">Episodes</a></li>
+            <li><a href="#video-content">Video Content</a></li>
+            <li><a href="#music-movement">Music and Movement</a></li>
+            <li><a href="#community">Community</a></li>
+            <li class="dropdown">
+                <a href="#">More</a>
+                <div class="dropdown-content">
+                    <a href="#about">About Us</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </li>
+        </ul>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div> <!-- Mobile Menu Icon -->
+    </nav>
+
+    <!-- Main Content -->
+
+    <!-- Home Section -->
+    <!-- Home Section -->
+    <section id="home" class="home-section">
+        <!-- Background Video -->
+        <video autoplay muted loop id="background-video">
+            <source src="chosen.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    
+        <!-- Frosted Glass Effect on Content -->
+        <div class="glass-content">
+            <h1 class="home-title typing-effect">Welcome to TechTalks Unplugged!</h1>
+            <p class="home-description">Your go-to podcast for fun and learning.</p>
+            <a href="#episodes" class="cta-button pulse">Listen Now!</a> <!-- Enhanced CTA button -->
+    
+            <!-- Fun Facts Section -->
+            <div class="fun-facts animated-facts">
+                <h3>Fun Facts:</h3>
+                <ul>
+                    <li><span class="fun-fact">🖥️ Did you know that the first computer programmer was a woman named Ada Lovelace?</span></li>
+                    <li><span class="fun-fact">👾 Over 80% of kids say they want to learn coding!</span></li>
+                    <li><span class="fun-fact">🎮 The first video game was created in 1958!</span></li>
+                    <li><span class="fun-fact">🌍 There are over 2 billion gamers worldwide!</span></li>
+                    <li><span class="fun-fact">🤖 A computer can perform trillions of calculations per second!</span></li>
+                    <li><span class="fun-fact">📱 The first mobile phone call was made in 1973!</span></li>
+                    <li><span class="fun-fact">🛰️ The Internet was originally a military project!</span></li>
+                </ul>
+            </div>
+        </div>
+    
+        <!-- Bottom Section -->
+        <div class="bottom-section">
+            <div class="featured-episodes">
+                <h2>Featured Episodes</h2>
+                <div class="episode-card">
+                    <img src="episode-thumbnail.jpg" alt="Episode Title">
+                    <h3>Episode Title</h3>
+                    <p>Short description of the episode.</p>
+                    <a href="link-to-episode" class="cta-button">Listen Now</a>
+                </div>
+                <!-- Repeat episode-card for other episodes -->
+            </div>
+            
+            <div class="newsletter-signup">
+                <h2>Stay Updated!</h2>
+                <form>
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="cta-button">Subscribe</button>
+                </form>
+            </div>
+            
+            <div class="testimonials">
+                <h2>What Our Listeners Say</h2>
+                <blockquote>"This podcast has changed my perspective!" - Listener Name</blockquote>
+                <blockquote>"I love the insights and discussions!" - Listener Name</blockquote>
+            </div>
+        </div>
+    
+        <!-- Floating Action Button -->
+        <a href="#latest" class="floating-button">🎧</a>
+    </section>
+    
+    
+    <br>
+    <hr>
+
+    <section id="episodes" class="section" style="background-image: url('bg2.jpg');">
+        <h2>Episodes</h2>
+    </section>
+    <br>
+    <hr>
+
+    <section id="video-content" class="section" style="background-image: url('video-bg.jpg');">
+        <h2>Video Content</h2>
+    </section>
+    <br>
+    <hr>
+
+    <section id="music-movement" class="section" style="background-image: url('music-bg.jpg');">
+        <h2>Music and Movement</h2>
+    </section>
+    <br>
+    <hr>
+
+    <section id="community" class="section" style="background-image: url('community-bg.jpg');">
+        <h2>Community</h2>
+    </section>
+    <br>
+    <hr>
+
+    <script src="script.js"></script>
+</body>
+</html>

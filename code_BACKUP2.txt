@@ -1,0 +1,1191 @@
+################## HTML2 ###############
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechTalks Unplugged</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="Podcast Logo"> <!-- Replace with your logo -->
+            <span class="podcast-name">TechTalks Unplugged</span> <!-- Podcast name -->
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#episodes">Episodes</a></li>
+            <li><a href="#video-content">Video Content</a></li>
+            <li><a href="#games-quizzes">Games and Quizzes</a></li>
+            <li><a href="#community">Community</a></li>
+            <li class="dropdown">
+                <a href="#">More</a>
+                <div class="dropdown-content">
+                    <a href="#about">About Us</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </li>
+        </ul>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div> <!-- Mobile Menu Icon -->
+    </nav>
+
+    <!-- Main Content -->
+
+    <!-- Home Section -->
+    <section id="home" class="home-section">
+        <!-- Background Video -->
+        <video autoplay muted loop id="background-video">
+            <source src="chosen.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    
+        <!-- Frosted Glass Effect on Content -->
+        <div class="glass-content">
+            <h1 class="home-title typing-effect">Welcome to TechTalks Unplugged!</h1>
+            <p class="home-description">Your go-to podcast for fun and learning.</p>
+            <a href="#episodes" class="cta-button pulse">Listen Now!</a> <!-- Enhanced CTA button -->
+    
+            <!-- Fun Facts Section -->
+            <div class="fun-facts animated-facts">
+                <h3>Fun Facts:</h3>
+                <ul>
+                    <li><span class="fun-fact">🖥️ Did you know that the first computer programmer was a woman named Ada Lovelace?</span></li>
+                    <li><span class="fun-fact">👾 Over 80% of kids say they want to learn coding!</span></li>
+                    <li><span class="fun-fact">🎮 The first video game was created in 1958!</span></li>
+                    <li><span class="fun-fact">🌍 There are over 2 billion gamers worldwide!</span></li>
+                    <li><span class="fun-fact">🤖 A computer can perform trillions of calculations per second!</span></li>
+                    <li><span class="fun-fact">📱 The first mobile phone call was made in 1973!</span></li>
+                    <li><span class="fun-fact">🛰️ The Internet was originally a military project!</span></li>
+                </ul>
+            </div>
+        </div>
+    
+        <!-- Bottom Section -->
+        <div class="bottom-section">
+            <div class="featured-episodes">
+                <h2>Featured Episodes</h2>
+                <div class="episode-card">
+                    <img src="episode-thumbnail.jpg" alt="Episode Title">
+                    <h3>Episode Title</h3>
+                    <p>Short description of the episode.</p>
+                    <a href="link-to-episode" class="cta-button">Listen Now</a>
+                </div>
+                <!-- Repeat episode-card for other episodes -->
+            </div>
+            
+            <div class="newsletter-signup">
+                <h2>Stay Updated!</h2>
+                <form>
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="cta-button">Subscribe</button>
+                </form>
+            </div>
+            
+            <div class="testimonials">
+                <h2>What Our Listeners Say</h2>
+                <blockquote>"This podcast has changed my perspective!" - Listener Name</blockquote>
+                <blockquote>"I love the insights and discussions!" - Listener Name</blockquote>
+            </div>
+        </div>
+    
+        <!-- Floating Action Button -->
+        <a href="#latest" class="floating-button">🎧</a>
+    </section>
+    
+    <br>
+    <hr>
+    <!--EPISODES SECTION-->
+    
+    <section id="episodes" class="section">
+        <div class="overlay"></div> <!-- Overlay for background -->
+        
+        <h2>Episodes</h2>
+        
+        <div class="episode-cards-container">
+            <div class="episode-card" onclick="playEpisode('episode1.mp3')">
+                <img src="episode-thumbnail1.jpg" alt="Episode 1">
+                <h3>Episode Title 1</h3>
+                <p>Short description of the episode.</p>
+                <span class="release-date">Release Date: January 1, 2024</span>
+                <div class="rating" data-rating="4">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
+                </div>
+            </div>
+            
+    
+            <div class="episode-card" data-audio="episode2.mp3">
+                <img src="episode-thumbnail2.jpg" alt="Episode 2" loading="lazy">
+                <h3>Episode Title 2</h3>
+                <p>Short description of the episode.</p>
+                <span class="release-date">Release Date: February 1, 2024</span>
+                <div class="rating">
+                    ★★★☆☆
+                </div>
+            </div>
+    
+            <div class="episode-card" data-audio="episode3.mp3">
+                <img src="episode-thumbnail3.jpg" alt="Episode 3" loading="lazy">
+                <h3>Episode Title 3</h3>
+                <p>Short description of the episode.</p>
+                <span class="release-date">Release Date: March 1, 2024</span>
+                <div class="rating">
+                    ★★★★★
+                </div>
+            </div>
+    
+            <!-- Add more episode cards as needed -->
+        </div>
+    
+        <div class="audio-player">
+            <audio id="audio" controls>
+                <source id="audio-source" src="" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    
+        <!-- Dark Mode Toggle -->
+        <div class="theme-toggle">
+            <input type="checkbox" id="dark-mode-toggle">
+            <label for="dark-mode-toggle">Dark Mode</label>
+        </div>
+    </section>
+    
+    
+
+    <br>
+    <hr>
+
+    <!--VIDE0 SECTION-->
+    <section id="video-content" class="section video-section">
+        <div class="video-overlay"></div> <!-- Overlay for visual effect -->
+    
+        <h2>Featured Videos</h2>
+    
+        <div class="video-grid-container">
+            <!-- First row of video cards -->
+            <div class="video-card" data-tilt>
+                <div class="video-overlay-content">
+                    <div class="play-button"></div>
+                </div>
+                <video muted loop poster="video-thumbnail1.jpg" class="video-player hover-preview">
+                    <source src="video1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <h3>Video Title 1</h3>
+                <p>Brief description of video 1. Explore the latest in tech innovations.</p>
+            </div>
+    
+            <div class="video-card" data-tilt>
+                <div class="video-overlay-content">
+                    <div class="play-button"></div>
+                </div>
+                <video muted loop poster="video-thumbnail2.jpg" class="video-player hover-preview">
+                    <source src="video2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <h3>Video Title 2</h3>
+                <p>Brief description of video 2. Delve into AI breakthroughs.</p>
+            </div>
+    
+            <div class="video-card" data-tilt>
+                <div class="video-overlay-content">
+                    <div class="play-button"></div>
+                </div>
+                <video muted loop poster="video-thumbnail3.jpg" class="video-player hover-preview">
+                    <source src="video3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <h3>Video Title 3</h3>
+                <p>Brief description of video 3. Discover the future of smart tech.</p>
+            </div>
+    
+            <!-- Second row of video cards -->
+            <div class="video-card" data-tilt>
+                <div class="video-overlay-content">
+                    <div class="play-button"></div>
+                </div>
+                <video muted loop poster="video-thumbnail4.jpg" class="video-player hover-preview">
+                    <source src="video4.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <h3>Video Title 4</h3>
+                <p>Brief description of video 4. Step into the world of robotics.</p>
+            </div>
+    
+            <div class="video-card" data-tilt>
+                <div class="video-overlay-content">
+                    <div class="play-button"></div>
+                </div>
+                <video muted loop poster="video-thumbnail5.jpg" class="video-player hover-preview">
+                    <source src="video5.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <h3>Video Title 5</h3>
+                <p>Brief description of video 5. Understanding quantum computing.</p>
+            </div>
+    
+            <div class="video-card" data-tilt>
+                <div class="video-overlay-content">
+                    <div class="play-button"></div>
+                </div>
+                <video muted loop poster="video-thumbnail6.jpg" class="video-player hover-preview">
+                    <source src="video6.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <h3>Video Title 6</h3>
+                <p>Brief description of video 6. The rise of autonomous vehicles.</p>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+    
+
+    <br>
+    <hr>
+
+    <!--GAMES AND QUIZZES SECTION-->
+    <section id="games-quizzes">
+        <!-- Video background -->
+        <video autoplay muted loop id="background-video">
+            <source src="chosen.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    
+        <!-- Transparent layer over the background video -->
+        <div class="overlay"></div>
+    
+        <!-- Particle animations -->
+        <div class="particle-bg">
+            <div class="particle"></div>
+            <div class="square"></div>
+            <div class="mosaic"></div>
+            <div class="leaf"></div>
+            <div class="doodle"></div>
+        </div>
+    
+        <!-- Neon Pulsing Heading -->
+        <h2 class="neon-heading">Games & Quizzes</h2>
+    
+        <!-- Game Cards with 3D Hover Effect -->
+        <div class="card-container">
+            <div class="game-card">
+                <h3>Game 1</h3>
+                <p>Play an exciting quiz to test your knowledge!</p>
+            </div>
+            <div class="game-card">
+                <h3>Game 2</h3>
+                <p>Challenge yourself with this fun trivia game!</p>
+            </div>
+            <div class="game-card">
+                <h3>Game 3</h3>
+                <p>Learn and play through interactive puzzles!</p>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+    
+
+    <br>
+    <hr>
+
+    <section id="community" class="section" style="background-image: url('community-bg.jpg');">
+        <h2>Community</h2>
+    </section>
+    <br>
+    <hr>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+######################## CSS 2 #####################
+/* Basic Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: black; /* Default text color */
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background: linear-gradient(90deg, #1a1a2e, #0f3460); /* Gradient background */
+    position: sticky; /* Sticky navbar */
+    top: 0; /* Position at the top */
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 2px solid #00ffcc; /* Classy bottom border */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+    transition: background 0.3s; /* Smooth background transition */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px; /* Adjust the size of your logo */
+    margin-right: 10px;
+}
+
+.podcast-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00ffcc; /* Neon color for a techy vibe */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Shadow for the podcast name */
+}
+
+/* Navigation Links Styles */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Increased gap for a more spacious feel */
+}
+
+.nav-links li {
+    display: inline;
+    position: relative; /* For dropdown positioning */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff; /* Link color */
+    font-size: 18px; /* Increased font size */
+    position: relative; /* For pseudo-element positioning */
+    padding: 5px 0; /* Padding for better click area */
+    transition: color 0.3s, transform 0.3s; /* Smooth color and transform transition */
+}
+
+.nav-links a:hover {
+    color: #00ffcc; /* Hover color */
+    transform: scale(1.1); /* Grow effect on hover */
+}
+
+/* Active Link Styles */
+.nav-links a.active {
+    border-bottom: 2px solid #00ffcc; /* Underline effect for active link */
+}
+
+/* Dropdown Styles */
+.dropdown-content {
+    display: none; /* Hide dropdown content by default */
+    position: absolute; /* Position relative to dropdown parent */
+    background-color: #1a1a2e; /* Background color for dropdown */
+    min-width: 160px; /* Minimum width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Show dropdown on hover */
+}
+
+.dropdown-content a {
+    color: white; /* Link color in dropdown */
+    padding: 12px 16px; /* Padding for dropdown items */
+    text-decoration: none; /* No underline */
+    display: block; /* Block display for dropdown items */
+}
+
+/* Dropdown link hover effects */
+.dropdown-content a:hover {
+    background-color: #00ffcc; /* Background color on hover */
+}
+
+/* Mobile Menu Icon Styles */
+.menu-icon {
+    display: none; /* Hidden by default */
+    font-size: 30px; /* Size of menu icon */
+    cursor: pointer; /* Pointer cursor */
+}
+
+/* Section Styles */
+.section {
+    padding: 100px 20px; /* Space for the fixed navbar */
+    height: 100vh; /* Full viewport height for each section */
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the background image */
+    color: #ffffff; /* Text color for section headings */
+    text-align: center; /* Center-align text */
+}
+
+.section h2 {
+    font-size: 48px; /* Increased font size for headings */
+    margin-bottom: 20px; /* Space below heading */
+    color: #00ffcc; /* Heading color */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Shadow effect */
+}
+
+/* Home Section Specific Styles */
+.home-section {
+    position: relative; /* Position for background video */
+    overflow: hidden; /* Hide overflow for clean look */
+}
+
+#background-video {
+    position: absolute; /* Absolute positioning */
+    top: 0; /* Align to top */
+    left: 0; /* Align to left */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    object-fit: cover; /* Cover the area */
+    z-index: -1; /* Send to background */
+}
+
+.glass-content {
+    position: relative; /* Position for glass effect */
+    background: rgba(255, 255, 255, 0.1); /* Transparent white background */
+    border-radius: 10px; /* Rounded corners */
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+    padding: 30px; /* Padding for content */
+    max-width: 800px; /* Maximum width */
+    margin: 0 auto; /* Center content */
+    text-align: center; /* Center text */
+    z-index: 1; /* Ensure it appears above background */
+}
+
+.home-title {
+    font-size: 56px; /* Title font size */
+    margin-bottom: 10px; /* Space below title */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Shadow effect for title */
+}
+
+.home-description {
+    font-size: 20px; /* Description font size */
+    margin-bottom: 20px; /* Space below description */
+}
+
+.cta-button {
+    background-color: #00ffcc; /* Button background */
+    color: #000; /* Button text color */
+    padding: 10px 20px; /* Button padding */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* No underline */
+    transition: background-color 0.3s; /* Smooth background transition */
+}
+
+.cta-button:hover {
+    background-color: #009999; /* Darker shade on hover */
+}
+
+/* Fun Facts Section */
+.fun-facts {
+    margin-top: 20px; /* Space above fun facts */
+}
+
+.fun-facts ul {
+    list-style-type: none; /* Remove default list style */
+    padding: 0; /* Remove padding */
+}
+
+.fun-fact {
+    display: block; /* Block display for each fun fact */
+    margin: 5px 0; /* Space between fun facts */
+    font-size: 16px; /* Font size for fun facts */
+}
+
+/* Bottom Section Styles */
+.bottom-section {
+    display: flex; /* Flex container */
+    justify-content: space-between; /* Space between items */
+    padding: 20px 0; /* Vertical padding */
+}
+
+.featured-episodes, .newsletter-signup, .testimonials {
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+    padding: 20px; /* Padding for cards */
+    border-radius: 10px; /* Rounded corners */
+    flex: 1; /* Equal flex growth */
+    margin: 10px; /* Space around cards */
+    text-align: left; /* Align text to the left */
+}
+
+/* Floating Action Button */
+.floating-button {
+    position: fixed; /* Fixed position */
+    bottom: 20px; /* Space from bottom */
+    right: 20px; /* Space from right */
+    background-color: #00ffcc; /* Background color */
+    color: #000; /* Text color */
+    border-radius: 50%; /* Circular button */
+    padding: 15px; /* Padding for button */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    font-size: 24px; /* Font size for icon */
+    transition: background-color 0.3s; /* Smooth background transition */
+}
+
+.floating-button:hover {
+    background-color: #009999; /* Darker shade on hover */
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack navbar items */
+        align-items: flex-start; /* Align items to start */
+    }
+    
+    .nav-links {
+        display: none; /* Hide links on mobile */
+        flex-direction: column; /* Stack links vertically */
+        position: absolute; /* Position for dropdown effect */
+        top: 60px; /* Position below navbar */
+        left: 0; /* Align to left */
+        width: 100%; /* Full width */
+        background: #0f3460; /* Background color */
+    }
+
+    .nav-links.show {
+        display: flex; /* Show links when toggled */
+    }
+
+    .menu-icon {
+        display: block; /* Show mobile icon */
+    }
+
+    .bottom-section {
+        flex-direction: column; /* Stack sections on mobile */
+        align-items: center; /* Center align */
+    }
+}
+
+/* General Styles */
+/* Episode Section */
+.section {
+    padding: 100px 20px; /* Space for the fixed navbar */
+    background-image: url('caves.jpg'); /* Background image */
+    background-size: cover; /* Cover the section with the background image */
+    background-position: center; /* Center the background image */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative; /* For positioning elements */
+    color: white; /* Text color for better contrast */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay effect */
+    z-index: -1; /* Behind the content */
+}
+
+h2 {
+    color: #00ffcc; /* Neon color for title */
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8); /* Glow effect */
+    margin-bottom: 20px; /* Space below title */
+}
+
+.episode-cards-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap */
+    justify-content: center; /* Center cards */
+    gap: 20px; /* Space between cards */
+}
+
+.episode-card {
+    background: rgba(255, 255, 255, 0.3); /* White background with transparency */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Inner padding */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    width: 250px; /* Fixed width for cards */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
+    position: relative; /* Position for z-index stacking */
+    cursor: pointer; /* Pointer cursor */
+    opacity: 0; /* For scroll animation */
+    transform: translateY(50px); /* Initial off-screen position */
+}
+
+.episode-card.show {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.episode-card img {
+    max-width: 100%; /* Ensure image is responsive */
+    border-radius: 10px; /* Rounded corners for episode image */
+    height: 150px; /* Fixed height for image */
+    object-fit: cover; /* Ensure the image covers the area */
+}
+
+.episode-card:hover {
+    transform: scale(1.05); /* Slight grow effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+}
+
+.release-date {
+    display: block; /* Block display for release date */
+    margin: 10px 0; /* Margin for spacing */
+}
+
+.rating {
+    color: #ffcc00; /* Gold color for stars */
+}
+
+.audio-player {
+    margin-top: 20px; /* Space above audio player */
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+body.dark-mode .section {
+    background-color: #1f1f1f;
+    background-image: none; /* Remove background image for dark mode */
+}
+
+body.dark-mode h2 {
+    color: #00ffcc;
+}
+
+/* Dark Mode Toggle */
+.theme-toggle {
+    margin-top: 30px;
+}
+
+.theme-toggle input[type="checkbox"] {
+    width: 40px;
+    height: 20px;
+    position: relative;
+    appearance: none;
+    background-color: #ccc;
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+}
+
+.theme-toggle input[type="checkbox"]:checked {
+    background-color: #00ffcc;
+}
+
+.theme-toggle input[type="checkbox"]::before {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background-color: white;
+    border-radius: 50%;
+    top: 1px;
+    left: 1px;
+    transition: 0.2s;
+}
+
+.theme-toggle input[type="checkbox"]:checked::before {
+    transform: translateX(20px);
+}
+
+/* Hover Sound */
+body {
+    cursor: url('custom-cursor.png'), auto; /* Custom cursor */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .episode-cards-container {
+        flex-direction: column; /* Stack cards on smaller screens */
+        align-items: center; /* Center cards */
+    }
+}
+
+/* Rating styles */
+.rating {
+    display: inline-block;
+    position: relative;
+    unicode-bidi: bidi-override;
+    font-size: 24px;
+    color: #c5c5c5; /* Default grey stars */
+}
+
+.rating span {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    color: #ffcc00; /* Gold color for filled stars */
+    transition: color 0.3s ease; /* Smooth transition for the star color */
+}
+
+.rating span:hover ~ span {
+    color: #c5c5c5; /* Reset subsequent stars on hover */
+}
+
+.rating span:hover,
+.rating span:hover ~ span {
+    color: #ffcc00; /* Fill stars on hover */
+}
+
+/* Video Section */
+.video-section {
+    padding: 100px 20px;
+    position: relative;
+    background-image: url('video.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.video-section h2 {
+    font-size: 3rem;
+    color: #00ffcc;
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+    margin-bottom: 40px;
+    z-index: 2;
+}
+
+/* Grid for video cards */
+.video-grid-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    z-index: 2;
+    flex-wrap: wrap;
+}
+
+.video-card {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    max-width: 350px;
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden; /* Hide play button overflow */
+}
+
+.video-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* 3D Tilt Effect */
+[data-tilt] {
+    perspective: 1000px;
+}
+
+[data-tilt] .video-card {
+    transform-style: preserve-3d;
+    transition: transform 0.2s ease-out;
+}
+
+.video-card:hover {
+    transform: rotateY(5deg) rotateX(5deg);
+}
+
+/* Play Button Overlay */
+.video-overlay-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-card:hover .video-overlay-content {
+    opacity: 1;
+}
+
+.play-button {
+    width: 60px;
+    height: 60px;
+    border: 2px solid #00ffcc;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.play-button::after {
+    content: '';
+    position: absolute;
+    top: 18px;
+    left: 22px;
+    width: 0;
+    height: 0;
+    border-left: 15px solid #00ffcc;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+/* Video Player */
+.video-player {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.video-card h3 {
+    margin: 20px 0 10px;
+    color: #00ffcc;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.8);
+}
+
+.video-card p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .video-grid-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+/* Parallax background effect */
+.video-section {
+    background-attachment: fixed;
+    background-image: url('video.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Hover Preview Effect */
+.video-player {
+    transition: opacity 0.3s ease;
+}
+
+.hover-preview:hover {
+    opacity: 0.7; /* Slight transparency on hover */
+}
+
+.hover-preview:hover video {
+    play:(); /* Play the muted preview */
+}
+
+/* Neon Glow Pulsing */
+.video-card:hover {
+    animation: glow-pulse 1.5s infinite;
+}
+
+@keyframes glow-pulse {
+    0% {
+        box-shadow: 0 8px 20px rgba(0, 255, 255, 0.5);
+    }
+    50% {
+        box-shadow: 0 8px 30px rgba(0, 255, 255, 1);
+    }
+    100% {
+        box-shadow: 0 8px 20px rgba(0, 255, 255, 0.5);
+    }
+}
+
+/* Scroll-triggered animation */
+.video-card {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.video-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #00ffcc;
+    border-radius: 10px;
+}
+
+/* Progress Bar on Hover */
+.video-card:hover .progress-bar {
+    width: 100%;
+}
+
+.progress-bar {
+    width: 0;
+    height: 4px;
+    background-color: #00ffcc;
+    transition: width 3s linear;
+}
+
+/* Games and Quizzes Section Styles */
+/* General section styling */
+#games-quizzes {
+    position: relative;
+    padding: 100px 20px;
+    color: white;
+    text-align: center;
+    overflow: hidden; /* Ensure particles stay within section */
+}
+
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2; /* Behind the overlay and content */
+}
+
+/* Transparent overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust transparency */
+    z-index: -1; /* In front of the video but behind the content */
+}
+
+/* Particle Background */
+.particle-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+/* Particles - circles */
+.particle {
+    width: 5px;
+    height: 5px;
+    background-color: #00ffcc;
+    position: absolute;
+    border-radius: 50%;
+    animation: move 10s infinite;
+}
+
+.particle:nth-child(1) { left: 10%; top: 30%; }
+.particle:nth-child(2) { left: 50%; top: 60%; }
+.particle:nth-child(3) { left: 70%; top: 20%; }
+
+/* Square particles */
+.square {
+    width: 8px;
+    height: 8px;
+    background-color: #ff9933;
+    position: absolute;
+    animation: move 12s infinite;
+}
+
+.square:nth-child(1) { left: 20%; top: 10%; }
+.square:nth-child(2) { left: 60%; top: 70%; }
+
+/* Mosaic particles */
+.mosaic {
+    width: 6px;
+    height: 6px;
+    background-color: #0099ff;
+    position: absolute;
+    animation: move 8s infinite;
+}
+
+.mosaic:nth-child(1) { left: 40%; top: 50%; }
+.mosaic:nth-child(2) { left: 80%; top: 80%; }
+
+/* Leaf particles */
+.leaf {
+    width: 10px;
+    height: 10px;
+    background-color: #33cc33;
+    position: absolute;
+    border-radius: 50%;
+    animation: move 14s infinite;
+}
+
+.leaf:nth-child(1) { left: 30%; top: 20%; }
+.leaf:nth-child(2) { left: 70%; top: 40%; }
+
+/* Doodle particles */
+.doodle {
+    width: 12px;
+    height: 12px;
+    background-color: #ff66cc;
+    position: absolute;
+    border-radius: 50%;
+    animation: move 16s infinite;
+}
+
+.doodle:nth-child(1) { left: 25%; top: 15%; }
+.doodle:nth-child(2) { left: 85%; top: 65%; }
+
+/* Particle animation */
+@keyframes move {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(100vh); }
+}
+
+/* Neon Heading */
+.neon-heading {
+    font-size: 3rem;
+    color: #00ffcc;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 0.6);
+    animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+    0% { text-shadow: 0 0 10px rgba(0, 255, 255, 0.8); }
+    100% { text-shadow: 0 0 20px rgba(0, 255, 255, 1); }
+}
+
+/* Game Cards with 3D Hover Effect */
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.game-card {
+    width: 220px;
+    height: 280px;
+    background-color: rgba(34, 34, 34, 0.8);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    perspective: 1000px;
+    color: white;
+    transition: transform 0.6s ease, box-shadow 0.4s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.game-card:hover {
+    transform: rotateY(10deg) rotateX(10deg);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.8);
+}
+
+.game-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.game-card p {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column;
+    }
+}
+
+
+###################### JS 2 ###################
+// JavaScript to handle the fun facts typing effect
+document.addEventListener("DOMContentLoaded", () => {
+    const facts = document.querySelectorAll('.fun-fact');
+    facts.forEach((fact, index) => {
+        fact.style.animationDelay = `${index * 4}s`; // Stagger each fact's appearance (increase delay for visibility)
+        fact.classList.add('typing'); // Add the typing class for animation
+    });
+});
+
+// Function to play an episode
+function playEpisode(source) {
+    const audio = document.getElementById('audio');
+    const audioSource = document.getElementById('audio-source');
+    audioSource.src = source;
+    audio.load();
+    audio.play();
+}
+
+// Event listener to play the episode when clicking on the episode card
+document.querySelectorAll('.episode-card').forEach(card => {
+    card.addEventListener('click', function () {
+        const audioSrc = this.getAttribute('data-audio');
+        playEpisode(audioSrc);
+    });
+});
+
+// Scroll animation for cards
+window.addEventListener('scroll', function() {
+    const cards = document.querySelectorAll('.episode-card');
+    cards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+            card.classList.add('show');
+        }
+    });
+});
+
+// Dark Mode Toggle
+const toggle = document.getElementById('dark-mode-toggle');
+toggle.addEventListener('change', function() {
+    document.body.classList.toggle('dark-mode');
+});
+
+// Optional: Hover sound effect
+const hoverSound = new Audio('hover-sound.mp3');
+document.querySelectorAll('.episode-card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        hoverSound.play();
+    });
+});
+
+document.addEventListener("scroll", function() {
+    const videoCards = document.querySelectorAll('.video-card');
+    videoCards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom >= 0) {
+            card.classList.add('is-visible');
+        }
+    });
+});
+
+
+
+
+
+

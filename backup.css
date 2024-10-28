@@ -1,0 +1,334 @@
+/* Basic Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: black; /* Default text color */
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background: linear-gradient(90deg, #1a1a2e, #0f3460); /* Gradient background */
+    position: sticky; /* Sticky navbar */
+    top: 0; /* Position at the top */
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 2px solid #00ffcc; /* Classy bottom border */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+    transition: background 0.3s; /* Smooth background transition */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px; /* Adjust the size of your logo */
+    margin-right: 10px;
+}
+
+.podcast-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00ffcc; /* Neon color for a techy vibe */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Shadow for the podcast name */
+}
+
+/* Navigation Links Styles */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Increased gap for a more spacious feel */
+}
+
+.nav-links li {
+    display: inline;
+    position: relative; /* For dropdown positioning */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff; /* Link color */
+    font-size: 18px; /* Increased font size */
+    position: relative; /* For pseudo-element positioning */
+    padding: 5px 0; /* Padding for better click area */
+    transition: color 0.3s, transform 0.3s; /* Smooth color and transform transition */
+}
+
+.nav-links a:hover {
+    color: #00ffcc; /* Hover color */
+    transform: scale(1.1); /* Grow effect on hover */
+}
+
+/* Active Link Styles */
+.nav-links a.active {
+    border-bottom: 2px solid #00ffcc; /* Underline effect for active link */
+}
+
+/* Dropdown Styles */
+.dropdown-content {
+    display: none; /* Hide dropdown content by default */
+    position: absolute; /* Position relative to dropdown parent */
+    background-color: #1a1a2e; /* Background color for dropdown */
+    min-width: 160px; /* Minimum width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Show dropdown on hover */
+}
+
+.dropdown-content a {
+    color: white; /* Link color in dropdown */
+    padding: 12px 16px; /* Padding for dropdown items */
+    text-decoration: none; /* No underline */
+    display: block; /* Block display for dropdown items */
+}
+
+/* Dropdown link hover effects */
+.dropdown-content a:hover {
+    background-color: #00ffcc; /* Background color on hover */
+}
+
+/* Mobile Menu Icon Styles */
+.menu-icon {
+    display: none; /* Hidden by default */
+    font-size: 30px; /* Size of menu icon */
+    cursor: pointer; /* Pointer cursor */
+}
+
+/* Section Styles */
+.section {
+    padding: 100px 20px; /* Space for the fixed navbar */
+    height: 100vh; /* Full viewport height for each section */
+    background-size: cover; /* Cover the section with the background image */
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Home Section Styles */
+.home-section {
+    position: relative; /* To allow background video */
+    z-index: 1; /* Ensure content is above video */
+    height: 100vh;
+}
+
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure video covers the entire section */
+    z-index: -1; /* Ensure video is behind content */
+    opacity: 1.0; /* Make video slightly transparent */
+}
+
+/* Gradient Overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    z-index: 0; /* Ensure overlay is on top of the video but below content */
+}
+
+/* Glassmorphism Effect */
+.glass-content {
+    background: rgba(255, 255, 255, 0.3); /* White background with transparency */
+    backdrop-filter: blur(3px); /* Frosted glass effect */
+    border-radius: 15px; /* Rounded corners */
+    padding: 30px; /* Inner padding */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    position: relative; /* Position relative for stacking context */
+    z-index: 1; /* Ensure it appears above the overlay */
+    text-align: center; /* Center text */
+}
+
+/* Home Title Styles */
+.home-title {
+    font-size: 3rem; /* Size of the main title */
+    color: #00ffcc; /* Neon color for title */
+    text-shadow: 0 0 13px rgba(0, 255, 255, 0.8), 0 0 13px black, 0 0 13px purple, 0 0 13px red; /* Glow effect */
+}
+
+/* Home Description Styles */
+.home-description {
+    font-size: 1.5rem; /* Size of the description */
+    margin: 20px 0; /* Margin for spacing */
+}
+
+/* Call-to-Action Button Styles */
+.cta-button {
+    background-color: #00ffcc; /* Button background */
+    color: black; /* Button text color */
+    padding: 15px 30px; /* Padding */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1.2rem; /* Button text size */
+    text-decoration: none; /* No underline */
+    transition: transform 0.3s, background 0.3s; /* Smooth transitions */
+}
+
+/* Pulse Effect on Hover */
+.cta-button:hover {
+    transform: scale(1.05); /* Slight grow effect on hover */
+    background-color: #00cc99; /* Darker shade on hover */
+}
+
+/* Floating Button Styles */
+.floating-button {
+    position: fixed; /* Fixed position */
+    bottom: 20px; /* Distance from bottom */
+    right: 20px; /* Distance from right */
+    background-color: #00ffcc; /* Background color */
+    color: black; /* Text color */
+    border-radius: 50%; /* Circular shape */
+    width: 60px; /* Width */
+    height: 60px; /* Height */
+    display: flex; /* Flexbox */
+    align-items: center; /* Centered items */
+    justify-content: center; /* Centered items */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    transition: transform 0.3s; /* Smooth transition */
+}
+
+/* Floating Button Hover Effect */
+.floating-button:hover {
+    transform: scale(1.1); /* Grow effect on hover */
+}
+
+/* Fun Facts Styles */
+.fun-facts {
+    margin-top: 30px; /* Space above fun facts */
+    font-size: 1.2rem; /* Size of fun facts */
+}
+
+/* Fun Fact Text Styles */
+.fun-fact {
+    display: block; /* Block display for each fact */
+    margin: 5px 0; /* Margin between facts */
+    color: white; /* Text color */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.fun-fact:hover {
+    color: #00ffcc; /* Color change on hover */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide nav links by default */
+        flex-direction: column; /* Stack links */
+        gap: 0; /* Remove gap */
+        background-color: #0f3460; /* Background for dropdown */
+        position: absolute; /* Position relative to navbar */
+        top: 60px; /* Position below navbar */
+        right: 0; /* Align right */
+        z-index: 999; /* Ensure it appears above other content */
+        width: 100%; /* Full width */
+    }
+
+    .menu-icon {
+        display: block; /* Show menu icon */
+    }
+
+    .nav-links.active {
+        display: flex; /* Show links when active */
+    }
+}
+
+/* Typing Effect Animation */
+.typing-effect {
+    display: inline-block;
+    overflow: hidden; /* Ensures the content is hidden */
+    white-space: nowrap; /* Prevents text wrapping */
+    animation: typing 3.5s steps(30, end), blink-caret 0.75s step-end infinite; /* Typing and blinking animation */
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #00ffcc; } /* Neon caret */
+}
+
+.home-section {
+    position: relative; /* Positioning for child elements */
+    overflow: hidden; /* Hide overflow from child elements */
+}
+
+.bottom-section {
+    padding: 50px 20px; /* Spacing for bottom content */
+    background-image: url('bottom.jpg'); /* Background image */
+    background-size: cover; /* Cover the entire section */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repeating */
+    color: white; /* Text color to ensure contrast */
+    border-top: 2px solid #00ffcc; /* Classy top border */
+    text-align: center; /* Center text */
+    position: relative; /* Position relative for potential overlays */
+    margin-top: 20px; /* Space between main content and bottom section */
+}
+
+.bottom-section::after {
+    content: ""; /* Create a pseudo-element for overlay */
+    position: absolute; /* Positioning */
+    top: 0; /* Cover entire section */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for contrast */
+    z-index: 1; /* Ensure overlay is above the background image */
+}
+
+.bottom-section h2, 
+.bottom-section p, 
+.bottom-section blockquote {
+    position: relative; /* Position relative for stacking */
+    z-index: 2; /* Ensure text is above the overlay */
+}
+
+.featured-episodes, .newsletter-signup, .testimonials {
+    margin: 20px 0; /* Margin for spacing between sections */
+}
+
+.episode-card {
+    margin: 15px 0; /* Space between episodes */
+}
+
+.episode-card img {
+    max-width: 100%; /* Ensure image is responsive */
+    border-radius: 10px; /* Rounded corners for episode image */
+}
+
+.newsletter-signup input {
+    padding: 10px; /* Padding for input */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    margin-right: 10px; /* Space between input and button */
+}
+
+.newsletter-signup button {
+    padding: 10px 15px; /* Padding for button */
+}
+
+.testimonials blockquote {
+    font-style: italic; /* Italicize testimonials */
+    margin: 10px 0; /* Margin for spacing */
+}
